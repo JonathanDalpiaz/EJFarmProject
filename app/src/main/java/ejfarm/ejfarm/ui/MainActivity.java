@@ -7,9 +7,16 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.EBean;
+
 import ejfarm.ejfarm.R;
+import ejfarm.ejfarm.dao.EJFarmDB;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Bean
+    EJFarmDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PlantioTempoReal.class);
         startActivity(intent);
 
+        //Exemplo de como salvar um plantio
+        //Plantio plantio = new Plantio();
+        //plantio.setQuantidadeSementes( quantidade de sementes aqui );
+        //plantio.setDataPlantio( colocar a data aqui );
+        //db.getPlantioDao().create(platio)
     }
 
     public void plantiosAntigos(View v){
